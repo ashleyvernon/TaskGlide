@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TaskGlide</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="vendor/device-mockups/device-mockups.min.css">
+
+    <!-- Theme CSS -->
+    <link href="css/new-age.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top"><img src="img/taskglide_logoo.png" height="45" style="margin-top: -5px;"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#">Download</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#">Features</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="header-content">
+                        <div class="header-content-inner">
+                            <h2>Simplifying the approach between creator and client, facilitating the process from meeting to contract to project completion with smart milestones.</h2>
+                            <a href="#" class="btn btn-outline btn-xl page-scroll">Creator Log In</a>
+                            <a href="login.html" class="btn btn-outline btn-xl page-scroll">Customer Log In</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="device-container">
+                        <div class="device-mockup iphone6_plus portrait white">
+                            <div class="device">
+                                <div class="screen">
+                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                                    <img src="img/demo-screen-1.jpg" class="img-responsive" alt="">
+                                </div>
+                                <div class="button">
+                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!--     <section>
+    <div><input id=input placeholder=start-chatting-here/></div>
+
+    Chat Output
+    <div id=box></div>
+
+    <script src=https://cdn.pubnub.com/sdk/javascript/pubnub.4.0.11.min.js></script>
+    <script>(function(){
+          var pubnub = new PubNub({ publishKey : 'pub-c-d4d1e7c8-6c3c-49b9-adfd-f427ab78da49', subscribeKey : 'sub-c-bff718a4-f0e4-11e6-87db-0619f8945a4f' });
+          function $(id) { return document.getElementById(id); }
+          var box = $('box'), input = $('input'), channel = '10chat-demo';
+          pubnub.addListener({
+              message: function(obj) {
+                  box.innerHTML = (''+obj.message.message).replace( /[<>]/g, '' ) + '<br>' + box.innerHTML
+              }});
+          pubnub.subscribe({channels:[channel]});
+          input.addEventListener('keyup', function(e) {
+              if ((e.keyCode || e.charCode) === 13) {
+                pubnub.publish({channel : channel,message : { user: '   name', message: input.value }, x : (input.value='')});
+            }
+          });
+    })();</script>
+    </section> -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="section-heading">
+                        <h2>Goal Oriented, Simplified Approach</h2>
+                        <p class="text-muted">Create smart milestones, payments for tasks completed and full management of the contract process.</p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="device-container">
+                        <div class="device-mockup iphone6_plus portrait white">
+                            <div class="device">
+                                <div class="screen">
+                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                                    <img src="img/demo-screen-1.jpg" class="img-responsive" alt=""> </div>
+                                <div class="button">
+                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="feature-item">
+                                    <i class="icon-screen-smartphone text-primary"></i>
+                                    <h3>Mobile Friendly</h3>
+                                    <p class="text-muted">Download the Mobile app from the stores.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-item">
+                                    <i class="icon-people text-primary"></i>
+                                    <h3>Chat with Customers</h3>
+                                    <p class="text-muted">Engage with your customers through the entire process of your contract creation.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="feature-item">
+                                    <i class="icon-pencil text-primary"></i>
+                                    <h3>Get Signatures Online</h3>
+                                    <p class="text-muted">Get your contracts signed online and recieve immediate payment.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-item">
+                                    <i class="icon-docs text-primary"></i>
+                                    <h3>Share Customer Files</h3>
+                                    <p class="text-muted">Upload and share content with your clients in one click.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="cta">
+        <div class="cta-content">
+            <div class="container">
+                <h2>Signed Contract.<br>Unlock Content.</h2>
+                <a href="#" class="btn btn-outline btn-xl page-scroll">Sign Up Now!</a>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2017 TaskGlide Developer Week Hackathon</p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/new-age.min.js"></script>
+
+</body>
+
+</html>
