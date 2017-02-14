@@ -7,6 +7,9 @@ var express = require('express');
 var path = require('path');
 var fs = require('fs');
 var app = express();
+var DEFAULT_HEADERS = {
+	"Strict-Transport-Security": "max-age=1800; includeSubDomains"
+}
 
 const PORT = process.env.PORT || 8080;
 
@@ -20,11 +23,11 @@ app.get('/', function (req, res) {
 	var options = {
 		root: __dirname,
 		dotfiles: 'deny',
-		headers: {
+		headers: Object.assign({
 			"Content-Type": "text/html",
 			'x-timestamp': Date.now(),
 			'x-sent': true
-		}
+		}, DEFAULT_HEADERS)
 	};
 
 	res.sendFile(FILE, options, function (err) {
@@ -125,20 +128,20 @@ function allowServeFromDir(req, res, type) {
 		var options = {
 			root: __dirname,
 			dotfiles: 'deny',
-			headers: {
+			headers: Object.assign({
 				// "Content-Type": headerMIME,
 				'x-timestamp': Date.now(),
 				'x-sent': true
-			}
+			}, DEFAULT_HEADERS)
 		};
 	} else {
 		var options = {
 			root: __dirname,
 			dotfiles: 'deny',
-			headers: {
+			headers: Object.assign({
 				'x-timestamp': Date.now(),
 				'x-sent': true
-			}
+			}, DEFAULT_HEADERS)
 		};
 	}
 
