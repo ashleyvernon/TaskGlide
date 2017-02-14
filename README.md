@@ -1,27 +1,33 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [New Age](http://startbootstrap.com/template-overviews/new-age/)
+TaskGlide | Developer Week 2017 Hackathon
+=========================================
 
-[New Age](http://startbootstrap.com/template-overviews/new-age/) is a web app landing page theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
+Team: Tal Globus, Yan Ming Hong, Michael Huh, Emanuele Pagani, Ashley Vernon
 
-## Getting Started
+Platform: Android, Web
 
-To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](http://startbootstrap.com/template-overviews/new-age/)
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-new-age.git`
-* Fork the repo
+### TASKGLIDE:
+![taskglide_preview](https://cloud.githubusercontent.com/assets/1645482/22869608/4d0fd7c4-f155-11e6-92d8-6c7a302040f9.gif)
 
-## Bugs and Issues
+## Event
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-new-age/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/new-age/).
+Event: Developer Week 2017 Hackathon
 
-## Creator
+Location: San Francisco, California, U.S.A.
 
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
+Date: February 11 - 12, 2017
 
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
+Project Website: http://accelerate.im/projects/702
 
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+Event Website: http://www.developerweek.com/hackathon/
 
-## Copyright and License
+## Description
 
-Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-new-age/blob/gh-pages/LICENSE) license.
+TaskGlide is a web and mobile app for connecting creators and clients and facilitating the process from meeting to contract to project completion. We strive for a goal oriented, simplified approach to client/creator interactions, with smart milestones, payments for tasks completed, and full management of the contract process.
+
+## Related Repositories:
+
+Backend: https://github.com/talglobus/taskglide
+
+Web Application: https://github.com/knyghtryda/TaskGlide
+
+Frontend: https://github.com/ashleyvernon/taskglide
