@@ -7,11 +7,14 @@ var express = require('express');
 var path = require('path');
 var fs = require('fs');
 var app = express();
+var DEFAULT_HEADERS = {
+	"Strict-Transport-Security": "max-age=1800; includeSubDomains"
+}
 
 const PORT = process.env.PORT || 8080;
 
 app.get('/', function (req, res) {
-	const FILE = './index.html';
+	let file = './index.html';
 
 	res.statusCode = 200;
 	// res.sendFile();
@@ -20,20 +23,20 @@ app.get('/', function (req, res) {
 	var options = {
 		root: __dirname,
 		dotfiles: 'deny',
-		headers: {
+		headers: Object.assign({
 			"Content-Type": "text/html",
 			'x-timestamp': Date.now(),
 			'x-sent': true
-		}
+		}, DEFAULT_HEADERS)
 	};
 
-	res.sendFile(FILE, options, function (err) {
+	res.sendFile(file, options, function (err) {
 		if (err) {
 			// console.log(err);
 			res.status(err.status).end();
 		}
 		else {
-			console.log('Sent:', FILE);
+			console.log('Sent:', file);
 			res.end();
 		}
 	});
@@ -117,7 +120,7 @@ function allowServeFromDir(req, res, type) {
 		headerMIME = "";
 	}
 
-	const FILE = req.url;
+	let file = req.url;
 
 	res.statusCode = 200;
 
@@ -125,35 +128,50 @@ function allowServeFromDir(req, res, type) {
 		var options = {
 			root: __dirname,
 			dotfiles: 'deny',
-			headers: {
+			headers: Object.assign({
 				// "Content-Type": headerMIME,
 				'x-timestamp': Date.now(),
 				'x-sent': true
-			}
+			}, DEFAULT_HEADERS)
 		};
 	} else {
 		var options = {
 			root: __dirname,
 			dotfiles: 'deny',
-			headers: {
+			headers: Object.assign({
 				'x-timestamp': Date.now(),
 				'x-sent': true
-			}
+			}, DEFAULT_HEADERS)
 		};
 	}
 
+	fs.stat(file, (err, data) => {
+		if (err !== null && err.errno == -2) {
+			// Remove trailing question mark and everything that follows...
+			//... it (OR THE FIRST QUESTION MARK IN `FILE` AND EVERYTHING...
+			//... AFTER IT) that could result from GET data in the request
+			file = file.split('?')[0];
 
+			fs.stat(file, (err, data) => {
+				if (err === null && err.errno == -2) {
+					console.error("File " + file + " could not be served as it doesn't exist");
+					return;
+				}
 
+				res.sendFile(file, options, function (err) {
+					if (err) {
 
-	res.sendFile(FILE, options, function (err) {
-		if (err) {
-			console.log("An error occurred while attempting to serve " + FILE);
-			// console.log(err);
-			res.status(err.status).end();
-		}
-		else {
-			console.log('Sent:' + FILE);
-			res.end();
+						console.log("An error occurred while attempting to serve " + file);
+						console.error(err);
+						// console.log(err);
+						res.status(err.status).end();
+					}
+					else {
+						console.log('Sent:' + file);
+						res.end();
+					}
+				});
+			});
 		}
 	});
 }
