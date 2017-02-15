@@ -6,6 +6,7 @@
 var express = require('express');
 var path = require('path');
 var fs = require('fs');
+let whitelist = require('./whitelist.js');
 var app = express();
 var DEFAULT_HEADERS = {
 	"Strict-Transport-Security": "max-age=1800; includeSubDomains"
@@ -46,7 +47,10 @@ app.get('/', function (req, res) {
 });
 
 app.get('/*', function(req, res) {
-	allowServeFromDir(req, res);
+	// TODO: THIS IS A RIDICULOUSLY BAD IDEA, ANY AND ALL FILES WILL BE SERVED
+	// if (req.url in whitelist) {
+		allowServeFromDir(req, res);
+	// }
 })
 
 // app.get('/logo.png', function(req, res) {

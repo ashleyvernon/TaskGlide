@@ -1,0 +1,22 @@
+module.exports = [
+"/index.html",
+"/vendor/bootstrap/css/bootstrap.css",
+"/vendor/font-awesome/css/font-awesome.min.css",
+"/vendor/simple-line-icons/css/simple-line-icons.css",
+"/vendor/device-mockups/device-mockups.css",
+"/css/new-age.css",
+"/vendor/jquery/jquery.min.js",
+"/vendor/bootstrap/js/bootstrap.min.js",
+"/js/new-age.min.js",
+"/img/white.svg",
+"/img/output_q0Gyw4.gif",
+"/img/gif/Android_Preview_2.png",
+"/img/bg-pattern.png",
+"/vendor/device-mockups/iphone_6_plus/iphone_6_plus_white_port.png",
+"/img/bg-cta.jpg",
+"/vendor/simple-line-icons/fonts/Simple-Line-Icons.woff2",
+"/favicon-16x16.png",
+"/favicon-96x96.png",
+"/android-icon-192x192.png",
+"/favicon-16x16.png"
+]
