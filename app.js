@@ -46,7 +46,13 @@ app.get('/', function (req, res) {
 	console.log("main");
 });
 
+// app.get('/datadog', function (req, res) {});
+
 app.get('/*', function(req, res) {
+	if (req.url == "/_ah/health" || req.url == "/app/_ah/health" || req.url.split("/")[1] == "datadog") {
+		return;		// Lets see if just ignoring the request allows it to be served
+	}
+
 	// TODO: This in theory should only allow relevant files to be served, based on the whitelist
 	let url = req.url;
 	let strippedURL = url.split('?')[0];

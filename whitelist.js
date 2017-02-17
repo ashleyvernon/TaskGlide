@@ -240,5 +240,6 @@ module.exports = [
 "vendor/simple-line-icons/less",
 "vendor/simple-line-icons/less/simple-line-icons.less",
 "vendor/simple-line-icons/scss",
-"vendor/simple-line-icons/scss/simple-line-icons.scss"
+"vendor/simple-line-icons/scss/simple-line-icons.scss",
+"_ah/health"	// Datadog agent data
 ]
