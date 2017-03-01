@@ -46,12 +46,26 @@ app.get('/', function (req, res) {
 	console.log("main");
 });
 
+// app.get('/datadog', function (req, res) {});
+
 app.get('/*', function(req, res) {
-	// TODO: THIS IS A RIDICULOUSLY BAD IDEA, ANY AND ALL FILES WILL BE SERVED
-	// if (req.url in whitelist) {
-		allowServeFromDir(req, res);
-	// }
-})
+	if (req.url == "/_ah/health" || req.url == "/app/_ah/health" || req.url.split("/")[1] == "datadog") {
+		return;		// Lets see if just ignoring the request allows it to be served
+	}
+
+	// TODO: This in theory should only allow relevant files to be served, based on the whitelist
+	let url = req.url;
+	let strippedURL = url.split('?')[0];
+	for (elem in whitelist) {
+		// TODO: Doubled code here, testing stripped, which happens again in `allowServeFromDir`
+		if ("/" + whitelist[elem] == url || "/" + whitelist[elem] == strippedURL) {
+			allowServeFromDir(req, res);
+			return;	// This stops resending responses in event of a duplicate in whitelist
+		}
+	}
+	return404(req, res);
+	console.log("Non-whitelisted file " + req.url + " requested, server refused to serve");
+});
 
 // app.get('/logo.png', function(req, res) {
 
@@ -191,6 +205,19 @@ function doIfFile(file, cb) {
 		}
 		return cb(null, stats.isFile());
 	});
+}
+
+function return404(req, res) {
+	res.status(404).end();
+	// Not using custom headers at the moment
+	// var options = {
+	// 		root: __dirname,
+	// 		dotfiles: 'deny',
+	// 		headers: Object.assign({
+	// 			'x-timestamp': Date.now(),
+	// 			'x-sent': true
+	// 		}, DEFAULT_HEADERS)
+	// 	};
 }
 
 // [END app]

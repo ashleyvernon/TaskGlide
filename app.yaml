@@ -12,6 +12,15 @@
 # limitations under the License.
 
 # [START app_yaml]
+#handlers:
+#  - url: /datadog
+#    script: gae_datadog.datadog.app
 runtime: nodejs
 env: flex
+#env_variables:
+#  DATADOG_API_KEY: '5b9f5a975bc7ca563ffce2a0df1b050a'
+resources:
+  cpu: 1
+  memory_gb: 4.0
+
 # [END app_yaml]
