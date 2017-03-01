@@ -18,7 +18,6 @@ app.get('/', function (req, res) {
 	let file = './index.html';
 
 	res.statusCode = 200;
-	// res.sendFile();
 	// res.write("Working");
 
 	var options = {
